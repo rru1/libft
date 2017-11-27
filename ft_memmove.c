@@ -6,7 +6,7 @@
 /*   By: ibondare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 15:56:45 by ibondare          #+#    #+#             */
-/*   Updated: 2017/11/21 15:56:47 by ibondare         ###   ########.fr       */
+/*   Updated: 2017/11/26 14:46:35 by ibondare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
-	char	*tmp;
+	char	*tmps;
+	char	*tmpd;
 
 	i = 0;
-	tmp = ft_memcpy(ft_strnew(len), src, len);
-	while (i < len)
-	{
-		((char *)dst)[i] = ((char *)tmp)[i];
-		i++;
-	}
+	tmps = (char *)src;
+	tmpd = (char *)dst;
+	if (tmps < tmpd)
+		while (len-- > 0)
+			((char *)tmpd)[len] = ((char *)tmps)[len];
+	else
+		return (ft_memcpy(dst, src, len));
 	return (dst);
 }

@@ -6,13 +6,13 @@
 /*   By: ibondare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 15:50:23 by ibondare          #+#    #+#             */
-/*   Updated: 2017/11/21 15:50:26 by ibondare         ###   ########.fr       */
+/*   Updated: 2017/11/26 13:21:36 by ibondare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	itoa_isneg(int *n, int *neg)
+static void	itoa_isneg(int *n, int *neg)
 {
 	if (*n < 0)
 	{
@@ -21,7 +21,7 @@ void	itoa_isneg(int *n, int *neg)
 	}
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		tmpn;
 	int		len;

@@ -6,7 +6,7 @@
 /*   By: ibondare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 15:53:30 by ibondare          #+#    #+#             */
-/*   Updated: 2017/11/21 15:53:32 by ibondare         ###   ########.fr       */
+/*   Updated: 2017/11/26 15:56:06 by ibondare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	i = 0;
 	if (s == NULL || f == NULL)
 		return (NULL);
-	tmp = ft_strdup(s);
+	if (!(tmp = ft_strdup(s)))
+		return (NULL);
 	while (tmp[i])
 	{
 		tmp[i] = (*f)(tmp[i]);
